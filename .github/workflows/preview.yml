@@ -13,9 +13,9 @@ jobs:
         with:
           script: |
             const allPRs = github.rest.pulls.list({
-              owner: windup,
-              repo: windup,
-              state: open
+              owner: "windup",
+              repo: "windup",
+              state: "open"
             })
             for (const pr of allPRs) {
               console.log(pr);              
