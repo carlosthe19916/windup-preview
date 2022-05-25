@@ -17,6 +17,4 @@ jobs:
               repo: "windup",
               state: "open"
             })
-            for (const pr of allPRs) {
-              console.log(pr);              
-            }
+            console.log(allPRs);
