@@ -12,7 +12,7 @@ jobs:
       - uses: actions/github-script@v6
         with:
           script: |
-            const allPRs = github.rest.pulls.list({
+            const allPRs = await github.rest.pulls.list({
               owner: "windup",
               repo: "windup",
               state: "open"
