@@ -1,0 +1,22 @@
+name: Preview
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            const allPRs = github.rest.pulls.list({
+              owner: windup,
+              repo: windup,
+              state: open
+            })
+            for (const pr of allPRs) {
+              console.log(pr);              
+            }
